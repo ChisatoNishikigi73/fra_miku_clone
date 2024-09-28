@@ -1,0 +1,448 @@
+#view,
+#view canvas,
+body,
+html {
+  width: 100%;
+  height: 100%;
+}
+#loading,
+#loading_first {
+  background: #fff;
+  height: 1px;
+}
+#about a,
+#howto a,
+#sns span,
+#top a,
+#top h1 span {
+  backface-visibility: hidden;
+  display: inline-block;
+}
+#bt_full,
+#footer,
+#time {
+  right: 0;
+  display: none;
+}
+body,
+html {
+  position: absolute;
+  overflow: hidden;
+  text-align: center;
+  background: #000;
+  color: #fff;
+  font-family: Amiri, "Sawarabi Mincho", "游明朝", YuMincho,
+    "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", serif;
+}
+#view {
+  position: fixed;
+  top: 0;
+  z-index: 1;
+}
+#about,
+#end,
+#howto,
+#kotoba,
+#loading,
+#loading_first,
+#main,
+#ready,
+#top,
+#words {
+  display: none;
+  position: absolute;
+  z-index: 100;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  width: 90%;
+}
+#param_stage,
+#param_word {
+  display: none;
+}
+#loading_first {
+  display: block;
+  width: 16px;
+  -webkit-animation: animblink 0.15s linear infinite;
+  animation: animblink 0.15s linear infinite;
+}
+#loading {
+  -webkit-animation: animblink 0.15s linear infinite;
+  animation: animblink 0.15s linear infinite;
+}
+@-webkit-keyframes animblink {
+  0% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes animblink {
+  0% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+#top {
+  z-index: 101;
+}
+#top h1 {
+  font-size: calc(1.2rem + 1vmin);
+  height: 180px;
+  height: calc(20px + 14vh);
+  letter-spacing: 2.4vmin;
+  line-height: calc(0.8em + 1.8vh);
+  margin-bottom: 10px;
+}
+#end .bt,
+#ready .bt,
+#top .bt {
+  font-size: calc(1rem + 0.5vmin);
+  margin: 0 auto 20px;
+  margin-bottom: calc(10px + 2.2vh);
+  padding: 4px;
+  border-left: 1px solid #fff;
+  border-right: 1px solid #fff;
+  width: 180px;
+  cursor: pointer;
+  position: relative;
+}
+#bt_howto {
+  margin-bottom: 15px;
+}
+#bt_about,
+#bt_howto {
+  font-size: calc(0.8rem + 0.4vmin);
+}
+#end .bt:before,
+#ready .bt:before,
+#top .bt:before {
+  content: " ";
+  background: rgba(255, 255, 255, 0.2);
+  width: 0;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  margin: 0 5%;
+  transition: 0.3s ease;
+}
+#end .bt:hover:before,
+#ready .bt:hover:before,
+#top .bt:hover:before {
+  width: 90%;
+}
+#miku_bg,
+#miku_bg div,
+#miku_bg p {
+  width: 100%;
+}
+#top .att {
+  margin-top: 10px;
+  margin-top: calc(5px + 1vh);
+  margin-bottom: 20px;
+  margin-bottom: calc(10px + 2vh);
+  font-size: calc(0.5rem + 0.6vmin);
+  color: #888;
+}
+#sns h3 {
+  font-size: 0.9rem;
+  font-size: calc(0.8rem + 0.6vmin);
+  margin-top: 30px;
+  margin-top: calc(10px + 2vh);
+  margin-bottom: 10px;
+  margin-bottom: calc(3px + 0.7vh);
+}
+#sns span {
+  cursor: pointer;
+}
+#sns span img {
+  width: 40px;
+  width: calc(32px + 2vmin);
+  margin: 0 10px;
+  margin: 0 calc(5px + 1vmin);
+}
+#top .nosup {
+  font-size: calc(0.6rem + 0.4vmin);
+  margin-bottom: 20px;
+  margin-bottom: calc(10px + 2vh);
+}
+#kotoba_head {
+  position: relative;
+  top: 0;
+  margin: 20px auto;
+  z-index: 102;
+  display: none;
+  font-size: calc(0.8rem + 1vmin);
+}
+#kotoba {
+  padding-top: 20vmin;
+  width: 97%;
+}
+#kotoba_head div p,
+#ready #stage p {
+  display: inline-block;
+  font-size: calc(3rem + 2vmin);
+}
+#kotoba_head div p {
+  font-size: calc(1.8rem + 1.4vmin);
+}
+#kotoba_num,
+#stage_num {
+  margin: 0 30px;
+  margin: 0 calc(20px + 3vw);
+}
+#ready #stage {
+  margin-bottom: 5px;
+  margin-bottom: calc(3px + 0.3vh);
+}
+#time_ready {
+  margin-bottom: 30px;
+  margin-bottom: calc(20px + 3.5vh);
+  font-size: calc(1rem + 0.7vmin);
+}
+#ready .bt {
+  margin-bottom: 0;
+}
+#bt_left,
+#bt_left_k,
+#bt_right,
+#bt_right_k {
+  color: #333;
+}
+#bt_left.on,
+#bt_left_k.on,
+#bt_right.on,
+#bt_right_k.on {
+  cursor: pointer;
+  color: #fff;
+}
+#about .cre:first-child {
+  margin-top: 0;
+  margin-bottom: 30px;
+  margin-bottom: calc(25px + 1.2vh);
+}
+#end h2,
+#time_end {
+  margin-bottom: 5px;
+}
+#about .cre {
+  font-size: calc(0.7rem + 0.7vmin);
+  margin-top: 15px;
+  margin-top: calc(10px + 0.5vh);
+}
+#about a,
+#howto a,
+#top a {
+  text-decoration: none;
+  color: #fff;
+  padding-bottom: 4px;
+  border-bottom: dashed 1px #fff;
+}
+#words {
+  width: 97%;
+  pointer-events: none;
+}
+#words p {
+  color: #000;
+}
+#kotoba p span,
+#words p span {
+  position: relative;
+  top: 0;
+  left: 0;
+  display: inline-block;
+}
+#kotoba p.text,
+#words p.text {
+  font-size: calc(0.8rem + 1.75vmin);
+}
+#kotoba p.name,
+#words p.name {
+  margin-top: 20px;
+  margin-top: calc(10px + 2.5vh);
+  font-size: calc(0.7rem + 1.45vmin);
+}
+#end h2 {
+  font-size: calc(2.5rem + 2vmin);
+  margin-bottom: calc(3px + 0.3vh);
+}
+#end h3 {
+  letter-spacing: 0.5rem;
+  margin-bottom: 30px;
+  margin-bottom: calc(20px + 3.5vh);
+}
+#time_end {
+  margin-bottom: calc(3px + 0.3vh);
+}
+#end h3,
+#time_end {
+  font-size: calc(1rem + 0.7vmin);
+}
+#end .bt {
+  margin-bottom: 0;
+  margin-top: 20px;
+  margin-top: calc(10px + 2.5vh);
+}
+#main {
+  pointer-events: none;
+}
+#main p {
+  font-size: calc(2.5rem + 9vmin);
+}
+#main p span {
+  position: relative;
+  top: 0;
+  left: 0;
+}
+#bt_back,
+#bt_full,
+#footer {
+  position: absolute;
+  z-index: 150;
+}
+#bt_back,
+#bt_full,
+#time {
+  position: fixed;
+  padding: 10px;
+  top: 0;
+}
+#footer {
+  bottom: 0;
+  left: 0;
+  letter-spacing: -0.4em;
+  pointer-events: none;
+}
+#footer p {
+  display: inline-block;
+  margin: 0 8px;
+  margin: 0 calc(7px + 1.3vmin);
+  cursor: pointer;
+  background: #fff;
+  padding: 5px;
+  padding: calc(6px + 1.2vmin);
+  padding-bottom: calc(9px + 1.4vmin);
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  line-height: 0;
+  vertical-align: bottom;
+  pointer-events: auto;
+}
+#footer p img {
+  width: 10px;
+  width: calc(5px + 1.3vmin);
+}
+#bt_back,
+#bt_full {
+  z-index: 150;
+  padding: calc(5px + 1vmin);
+  cursor: pointer;
+  padding-bottom: calc(10px + 2vmin);
+}
+#time {
+  padding: calc(5px + 1vmin);
+  z-index: 100;
+  font-size: calc(0.8rem + 0.6vmin);
+  pointer-events: none;
+}
+#bt_back {
+  padding-right: calc(10px + 2vmin);
+  left: 0;
+}
+#bt_full {
+  padding-left: calc(10px + 2vmin);
+}
+#bt_back img,
+#bt_full img {
+  width: 10px;
+  width: calc(5px + 1.6vmin);
+}
+#miku_bg {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  z-index: 3;
+  display: none;
+}
+#miku_bg p {
+  height: 100%;
+  position: absolute;
+  top: 0;
+  background: rgba(0, 0, 0, 0.6);
+}
+#miku_bg div:nth-child(1) {
+  height: 15%;
+  background: #ea4b9b;
+}
+#miku_bg div:nth-child(2) {
+  height: 15%;
+  background: #1c878c;
+}
+#miku_bg div:nth-child(3) {
+  height: 20%;
+  background: #86cecb;
+}
+#miku_bg div:nth-child(4) {
+  height: 20%;
+  background: #c3e5e7;
+}
+#miku_bg div:nth-child(5) {
+  height: 12%;
+  background: #fffeec;
+}
+#miku_bg div:nth-child(6) {
+  height: 12%;
+  background: #bec8d1;
+}
+#miku_bg div:nth-child(7) {
+  height: 6%;
+  background: #89898e;
+}
+#miku #kotoba_p {
+  color: #e268a6;
+}
+#howto img {
+  width: 90%;
+  max-width: 640px;
+}
+#howto p {
+  font-size: calc(0.8rem + 0.7vmin);
+  margin: calc(5px + 1.5vh) 0;
+}
+@media (orientation: landscape) {
+  #howto img {
+    width: 60%;
+  }
+  #howto p br {
+    display: none;
+  }
+}
+#about a:hover,
+#bt_back:hover,
+#bt_full:hover,
+#howto a:hover,
+#sns span:hover,
+#top a:hover {
+  -webkit-animation: animblink 0.2s;
+  animation: animblink 0.2s;
+}
+@media (orientation: landscape) and (max-height: 390px) {
+  #sns {
+    display: none;
+  }
+}
+@media (orientation: landscape) and (max-height: 450px) {
+  .bl {
+    display: none;
+  }
+  #top h1 {
+    height: calc(20px + 10vh);
+  }
+}

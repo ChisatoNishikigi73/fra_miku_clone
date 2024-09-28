@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+        <link rel="icon" href="/fra_miku/img/icon.png">
+        <meta name="description" content="初音ミク10周年に添えて。">
+        <title>Fragments of HATSUNE MIKU</title>
+        <link rel="apple-touch-icon" href="icon.png">
+        <link href="https://fonts.googleapis.com/css?family=Amiri|Comfortaa|Architects+Daughter|Baloo|Barrio" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/earlyaccess/sawarabimincho.css" rel="stylesheet"/>
+        <link charset="UTF-8" href="../shared/css/common.css" rel="stylesheet">
+        <link charset="utf-8" href="css/main.css" rel="stylesheet">
+        <script charset="utf-8" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" type="text/javascript" async></script>
+        <script charset="utf-8" src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.12.0/matter.min.js" type="text/javascript" async></script>
+        <script charset="utf-8" src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/4.5.5/pixi.min.js" type="text/javascript" async></script>
+        <script charset="utf-8" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js" type="text/javascript" async></script>
+        <script charset="UTF-8" src="../shared/js/common.js" type="text/javascript" async></script>
+        <script type="text/javascript">
+            (function ___init() {
+                if (typeof aidn == "undefined" || typeof jQuery == "undefined" || typeof PIXI == "undefined") {
+                    setTimeout(___init, 10);
+                    return
+                }
+                var a = ["js/fra.js"];
+                aidn.init.ver = 0;
+                aidn.init.loadScript(a)
+            }
+            )();
+        </script>
+    </head>
+    <body>
+        <div id="grad"></div>
+        <div id="view"></div>
+        <div id="miku_bg">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <p></p>
+        </div>
+        <div id="loading_first"></div>
+        <div id="top">
+            <h1>
+                Fragments<br class="bl">
+                of <br class="bl">HATSUNE MIKU
+            </h1>
+            <div>
+                <p id="bt_play" class="bt ok">PLAY</p>
+                <p id="bt_kotoba" class="bt ok">ARCHIVE</p>
+                <p class="nosup ng ja">
+                    申し訳ございません、<br>お使いの端末又はブラウザには対応しておりません。
+                </p>
+                <p class="nosup ng en">
+                    Sorry,<br>your device or browser doesn't support this site.
+                </p>
+                <p class="ok" id="bt_howto">
+                    <a href="">HOW TO PLAY</a>
+                </p>
+                <p id="bt_about">
+                    <a href="">CREDIT</a>
+                </p>
+                <p class="att ok ja">※サウンドをオンにしてお楽しみください。</p>
+                <p class="att ok en">* Raise the volume and enjoy!</p>
+            </div>
+            <div id="sns">
+                <h3>SHARE</h3>
+                <p>
+                    <span id="bt_github">
+                        <img src="../shared/img/github-mark-white.png">
+                    </span>
+                    <span id="bt_tw">
+                        <img src="../shared/img/twitter_w.png">
+                    </span>
+                    <span id="bt_fb">
+                        <img src="../shared/img/facebook_w.png">
+                    </span>
+                    <span id="bt_gp">
+                        <img src="../shared/img/google_w.png">
+                    </span>
+                </p>
+            </div>
+        </div>
+        <div id="howto">
+            <p>HOW TO PLAY</p>
+            <p>
+                <img src="img/howto.gif">
+            </p>
+            <p>
+                床を作って、<br>
+                ボールを転がして、<br>光る玉を線でつなげよう。
+            </p>
+        </div>
+        <div id="about">
+            <p class="cre">Special Thanks to Everyone!</p>
+            <p class="cre">
+                Voiced by <a href="https://ec.crypton.co.jp/pages/prod/vocaloid/mikuv4x" target="_blank">Hatsune Miku</a>
+            </p>
+            <p class="cre">
+                Created by <a href="/" target="_blank">daniwell</a>
+                (<a href="https://twitter.com/daniwell_aidn" target="_blank">twitter</a>
+                )
+            </p>
+            <p class="cre">
+                Clone by <a href="https://github.com/ChisatoNishikigi73" target="_blank">ChisatoNishikigi73</a>
+            </p>
+        </div>
+        <div id="kotoba_head">
+            <p>みつけた言葉たち</p>
+            <p id="kotoba_p">123</p>
+            <div class="noselect">
+                <p id="bt_left_k">&lt;</p>
+                <p id="kotoba_num"></p>
+                <p id="bt_right_k">&gt;</p>
+            </div>
+        </div>
+        <div id="kotoba">
+            <p class="text"></p>
+            <p class="name"></p>
+        </div>
+        <div id="loading"></div>
+        <div id="ready">
+            <div id="stage" class="noselect">
+                <p id="bt_left">&lt;</p>
+                <p id="stage_num"></p>
+                <p id="bt_right">&gt;</p>
+            </div>
+            <p id="time_ready">123.45</p>
+            <p id="bt_start" class="bt">START</p>
+        </div>
+        <div id="main">
+            <p id="stage_title">00</p>
+        </div>
+        <div id="footer">
+            <p>
+                <img src="img/0.png">
+            </p>
+            <p>
+                <img src="img/1.png">
+            </p>
+            <p>
+                <img src="img/2.png">
+            </p>
+        </div>
+        <div id="words">
+            <p class="text"></p>
+            <p class="name"></p>
+        </div>
+        <div id="end">
+            <h2>00</h2>
+            <p id="time_end">123.45</p>
+            <h3>ARCHIVE: 100%</h3>
+            <p id="bt_retry" class="bt">RETRY</p>
+            <p id="bt_next" class="bt">NEXT</p>
+            <p id="bt_back2" class="bt">BACK</p>
+        </div>
+        <p id="bt_back">
+            <img src="img/back.png">
+        </p>
+        <p id="bt_full">
+            <img src="img/full.png">
+        </p>
+        <div id="time">123.45</div>
+    </body>
+</html>
